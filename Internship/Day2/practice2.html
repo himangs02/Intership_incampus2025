@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #container{
+        background-color:#ffffff;
+        display: flex;
+        padding: 20px;
+        height: 50px;
+        border: dotted 2px black;
+    }
+    img{
+        top: 2px;
+        left: 0;
+        height: 70px;
+        width: auto;
+        border-radius: 100%;
+    }
+    #old{
+        display:flex;
+        position: fixed;
+        right: 5%;
+        gap: 10px;
+    }
+    button{
+        justify-content: center;
+        height:50px;
+        width: 80px;
+        border: none;
+        border-radius: 20%;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: medium;
+    }
+    #new{
+         display:flex;
+        position: fixed;
+        left: 5%;
+        gap: 10px;
+
+    }
+    button:hover{
+        background-color: #1a83cd;
+        color: #ffffff;
+    }
+
+</style>
+<body>
+    <nav id="container">
+        <div id="new">
+            <img src="media_1c66507b68db7c7927c0f978345701fe0b2200583.png" alt="">
+        <button>Live</button>
+        <button>Push</button>
+        <button>Link</button>
+        <button>Shop</button>
+        <button>Packs</button>
+        <button>Help</button>
+        <button>More+</button>
+        </div>
+        <div id="old">
+            <button style="color: blue;">Try Live for free</button>
+            <button>Account</button>
+            <button>Log out</button>
+        </div>
+    </nav>
+</body>
+</html>

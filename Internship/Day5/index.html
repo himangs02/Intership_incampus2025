@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Responsive Navbar</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <nav class="bg-black p-4">
+    <div class="flex justify-between items-center">
+      
+      <a href="#" class="text-gray-100 font-semibold text-lg">
+        MySite
+      </a>
+
+     
+      <input id="menu-toggle" type="checkbox" class="hidden peer">
+      <label for="menu-toggle" class="flex flex-col gap-1 w-6 h-6 cursor-pointer sm:hidden">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 18L20 18" stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path> <path d="M4 12L20 12" stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path> <path d="M4 6L20 6" stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path> </g></svg>
+      </label>
+
+      
+      <div class="hidden flex-col sm:flex sm:flex-row sm:items-center sm:gap-6 peer-checked:flex">
+        <a href="#" class="text-gray-100 px-2 py-1 hover:bg-gray-800 rounded-md">Home</a>
+        <a href="#" class="text-gray-100 px-2 py-1 hover:bg-gray-800 rounded-md">About</a>
+        <a href="#" class="text-gray-100 px-2 py-1 hover:bg-gray-800 rounded-md">Services</a>
+        <a href="#" class="text-gray-100 px-2 py-1 hover:bg-gray-800 rounded-md">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <div class="flex justify-center p-4 ">
+
+      <input id="input" type="text" class="h-10 w-max border-2 border-black bg-black text-white rounded-xl p-4" placeholder="Type a number">
+      <button id="button">click</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

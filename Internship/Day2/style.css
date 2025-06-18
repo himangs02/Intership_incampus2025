@@ -1,0 +1,54 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Branding section */
+#Brand img {
+    width: 150px;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Container styling */
+#container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Individual button colors */
+.f { background-color: #007bff; color: white; }
+.g { background-color: #28a745; color: white; }
+.h { background-color: #ffc107; color: black; }
+.c { background-color: #dc3545; color: white; }
+.l { background-color: #6c757d; color: white; }
+
+/* Main content section */
+#container2 {
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+}
+
+#container2 img {
+    width: 60%;
+    height: auto;
+    margin-top: 10px;
+}
