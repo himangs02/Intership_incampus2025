@@ -146,13 +146,13 @@ setInterval(()=>{
 
 //---------------------------------------------------------------------------------
 
-function square(num){
-    return num*num;
-}
+// function square(num){
+//     return num*num;
+// }
 
-arr=[];
-for(let i=1;i<=10;i++){
-    arr.push(i);
-}
-let sqr=arr.map(square);
-console.log(sqr);
+// arr=[];
+// for(let i=1;i<=10;i++){
+//     arr.push(i);
+// }
+// let sqr=arr.map(square);
+// console.log(sqr);
