@@ -27,5 +27,7 @@ let b = 5;
 // }
 
 //ternary operartor
+/*
 let c = a>b?"a is greater than b ":"b is greater than a ";
 console.log(c);
+*/
