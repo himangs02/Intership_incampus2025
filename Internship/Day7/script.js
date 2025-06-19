@@ -76,3 +76,31 @@ console.log(c);
 // console.log(add());
 
 
+
+// arror function
+
+let score =0;
+let scr=document.getElementById("Score")
+
+let Random=()=>{
+        console.log("#"+Math.floor(Math.random()*16736278).toString(16));
+        return "#"+Math.floor(Math.random()*16736278).toString(16);
+
+    }
+
+
+let btn=document.getElementById("btn");
+btn.addEventListener("click",()=>{
+    let color=Random();
+    btn.style.backgroundColor=color;
+    
+});
+
+
+btn.addEventListener("click",()=>{
+    scr.innerText=Math.floor(Math.random()*100);
+    scr.style.backgroundColor=Random();
+    
+
+})
+
