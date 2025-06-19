@@ -76,17 +76,18 @@ console.log(c);
 // console.log(add());
 
 
-
+//--------------------------------------------------------------------------------
 // arror function
 
 let score =0;
-let scr=document.getElementById("Score")
+let Timer=60;
+
 
 let Random=()=>{
-        console.log("#"+Math.floor(Math.random()*16736278).toString(16));
-        return "#"+Math.floor(Math.random()*16736278).toString(16);
-
-    }
+    console.log("#"+Math.floor(Math.random()*16736278).toString(16));
+    return "#"+Math.floor(Math.random()*16736278).toString(16);
+    
+}
 
 
 let btn=document.getElementById("btn");
@@ -97,6 +98,7 @@ btn.addEventListener("click",()=>{
 });
 
 
+let scr=document.getElementById("Score")
 btn.addEventListener("click",()=>{
     scr.innerText=Math.floor(Math.random()*100);
     scr.style.backgroundColor=Random();
@@ -104,3 +106,53 @@ btn.addEventListener("click",()=>{
 
 })
 
+let bj=document.getElementById("bj");
+btn.addEventListener("click",()=>{
+    bj.style.backgroundColor=Random();
+})
+
+let timer=document.getElementById("timer");
+setInterval(()=>{
+    if(Timer>0){
+    timer.innerText=Timer--;
+    }else if(Timer==0){
+        timer.innerText="Time is Over";
+        timer.style.color="red";
+        Timer=60;
+    }
+},1000);
+
+
+///--------------------------------------------------------------------------
+// //Callback function
+// //higher order function
+
+// function cb(a,b){
+//     console.log("callback function");
+//     return a+b;
+// }
+
+
+// function parent(a,b,fun){
+//     console.log("higher order function");
+//     console.log(a+b);
+//     let sum = a+b;
+//     let result = fun(sum,20);
+//     return result;
+
+
+// }
+// let ans=parent(10,20,cb);
+
+//---------------------------------------------------------------------------------
+
+function square(num){
+    return num*num;
+}
+
+arr=[];
+for(let i=1;i<=10;i++){
+    arr.push(i);
+}
+let sqr=arr.map(square);
+console.log(sqr);
