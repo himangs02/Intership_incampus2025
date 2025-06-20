@@ -80,7 +80,7 @@ console.log(c);
 // arror function
 
 let score =0;
-// let Timer=60;
+let Timer=3;
 
 
 let Random=()=>{
@@ -111,17 +111,22 @@ btn.addEventListener("click",()=>{
     bj.style.backgroundColor=Random();
 })
 
-// let timer=document.getElementById("timer");
-// setInterval(()=>{
-//     if(Timer>0){
-//     timer.innerText=Timer--;
-//     }else if(Timer==0){
-//         timer.innerText="Time is Over";
-//         timer.style.color="red";
-//         Timer=60;
-//     }
-// },1000);
+let timer=document.getElementById("timer");
+setInterval(()=>{
+    if(Timer>0){
+    timer.innerText=Timer--;
+    }else if(Timer==0){
+        timer.innerText="Time is Over";
+        timer.style.color="red";
+        Timer=60;
+    }
+},1000);
 
+setTimeout(()=>{
+    timer.innerText="Time is Over";
+    timer.style.color="red";
+    Timer=60;
+},60000);
 
 ///--------------------------------------------------------------------------
 // //Callback function
