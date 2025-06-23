@@ -122,11 +122,6 @@ setInterval(()=>{
     }
 },1000);
 
-setTimeout(()=>{
-    timer.innerText="Time is Over";
-    timer.style.color="red";
-    Timer=60;
-},60000);
 
 ///--------------------------------------------------------------------------
 // //Callback function
