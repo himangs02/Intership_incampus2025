@@ -99,29 +99,29 @@
 // });
 
 
-const form = document.getElementById("search-form");
-const appendcard = document.getElementById("card");
+// const form = document.getElementById("search-form");
+// const appendcard = document.getElementById("card");
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  try {
-    let res = await axios.get("https://www.omdbapi.com/?i=tt3896198&apikey=9b92318a");
-    const movie = res.data;
+// form.addEventListener("submit", async (e) => {
+//   e.preventDefault();
+//   try {
+//     let res = await axios.get("https://www.omdbapi.com/?i=tt3896198&apikey=9b92318a");
+//     const movie = res.data;
 
-    // Create a simple card with movie info
-    const cardDiv = document.createElement("div");
-    cardDiv.className = "movie-card";
-    cardDiv.innerHTML = `
-      <h3>${movie.Title}</h3>
-      <p>Year: ${movie.Year}</p>
-      <p>Genre: ${movie.Genre}</p>
-      <img src="${movie.Poster}" alt="Movie Poster" width="200">
-    `;
+//     // Create a simple card with movie info
+//     const cardDiv = document.createElement("div");
+//     cardDiv.className = "movie-card";
+//     cardDiv.innerHTML = `
+//       <h3>${movie.Title}</h3>
+//       <p>Year: ${movie.Year}</p>
+//       <p>Genre: ${movie.Genre}</p>
+//       <img src="${movie.Poster}" alt="Movie Poster" width="200">
+//     `;
 
-    appendcard.innerHTML = ""; // Clear any existing content
-    appendcard.appendChild(cardDiv);
-  } catch (error) {
-    console.error("Error fetching movie data:", error);
-    appendcard.innerHTML = "<p>Oops! Couldn’t fetch movie data.</p>";
-  }
-});
+//     appendcard.innerHTML = ""; // Clear any existing content
+//     appendcard.appendChild(cardDiv);
+//   } catch (error) {
+//     console.error("Error fetching movie data:", error);
+//     appendcard.innerHTML = "<p>Oops! Couldn’t fetch movie data.</p>";
+//   }
+// });
