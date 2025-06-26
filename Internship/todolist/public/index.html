@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+<div  class="flex flex-col border-2 border-gray-300 box-shadow-300 bg-shadow-400 justify-center rounder-2xl m-[9vw] h-auto w-max gap-8  rounded-2xl">
+        <span><h1 class="font-bold text-3xl flex justify-center">Task Manager</h1></span>
+
+        <form id="form" class="flex justify-center border-2 border-gray-300 rounded-2xl m-6 overflow-hidden">
+            <input id="input" type="text" placeholder="Enter your Task" class=" h-15 w-[70vw] p-2 " >
+            <button id="Add" class="h-15 w-50 bg-green-500  ">Add Task</button>
+        </form>
+
+        <div id="container" class="flex justify-center flex-col gap-3 w-385 ">
+
+        </div>
+
+        <div id="btn-container" class="flex justify-center  gap-5">
+            <button id="All" class="border-2 border-gray-300 rounded-2xl w-25 h-12">All</button>
+            <button id="Active" class="border-2 border-gray-300 rounded-2xl w-25 h-12 bg-green-500">Active</button>
+            <button id="Completed" class="border-2 border-gray-300 rounded-2xl w-25 h-12">Completed</button>
+            
+        </div>
+
+
+        <span class="flex justify-center">
+            <button id="Clear" class="border-2 border-gray-300 rounded-2xl w-max h-12 p-3 bg-red-400">
+                Clear Completed
+            </button>
+        </span>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

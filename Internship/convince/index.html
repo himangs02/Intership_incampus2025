@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Delights - Premium Food Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<style>
+  /* Base Styles */
+:root {
+    --primary-color: #e63946;
+    --secondary-color: #457b9d;
+    --accent-color: #a8dadc;
+    --dark-color: #1d3557;
+    --light-color: #f1faee;
+    --text-color: #333;
+    --text-light: #777;
+    --white: #fff;
+    --black: #000;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background-color: var(--light-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #c1121f;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+    background-color: var(--dark-color);
+}
+
+.btn-secondary:hover {
+    background-color: #14213d;
+}
+
+/* Header & Navigation */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.logo i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-links a:not(.btn-reservation):after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.nav-links a:hover:not(.btn-reservation):after {
+    width: 100%;
+}
+
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+.nav-links a.active:after {
+    width: 100%;
+}
+
+.btn-reservation {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.btn-reservation:hover {
+    background-color: #c1121f;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--dark-color);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Main Content */
+main {
+    margin-top: 80px;
+    min-height: calc(100vh - 160px);
+}
+
+.page {
+    display: none;
+    padding: 60px 0;
+}
+
+.page.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Home Section */
+#home {
+    padding: 0;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
+    padding: 40px 0;
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--text-light);
+    max-width: 600px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.hero-image {
+    flex: 1;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.hero-image:hover img {
+    transform: scale(1.05);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+    padding: 40px 0;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.feature-card {
+    text-align: center;
+    padding: 30px;
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.feature-card p {
+    color: var(--text-light);
+}
+
+/* Recipes Section */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--dark-color);
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.recipe-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.recipe-item {
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.recipe-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.recipe-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.recipe-item:hover .recipe-image img {
+    transform: scale(1.1);
+}
+
+.recipe-time {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.recipe-content {
+    padding: 25px;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.difficulty {
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.servings {
+    color: var(--text-light);
+}
+
+.recipe-item h3 {
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+.recipe-item p {
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.recipe-button {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.recipe-button i {
+    margin-left: 5px;
+    transition: var(--transition);
+}
+
+.recipe-button:hover {
+    color: var(--dark-color);
+}
+
+.recipe-button:hover i {
+    transform: translateX(5px);
+}
+
+/* Menu Section */
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.menu-tab {
+    padding: 10px 25px;
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.menu-tab:hover, .menu-tab.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.menu-categories {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+}
+
+.menu-category {
+    display: none;
+}
+
+.menu-category.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.menu-item {
+    padding: 20px 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-item-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.menu-item h3 {
+    color: var(--dark-color);
+}
+
+.price {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.menu-item p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* Contact Section */
+.contact-container {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.contact-info h2, .contact-form h2 {
+    margin-bottom: 30px;
+    color: var(--dark-color);
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.info-item i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--dark-color);
+    color: var(--white);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    transition: var(--transition);
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.2);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #c1121f;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.submit-btn i {
+    transition: var(--transition);
+}
+
+.submit-btn:hover i {
+    transform: translateX(5px);
+}
+
+.map-container {
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: var(--white);
+    padding: 60px 0 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    color: var(--white);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.footer-section p {
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: var(--transition);
+}
+
+.footer-section ul li a:hover {
+    color: var(--white);
+    padding-left: 5px;
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 20px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.newsletter-form button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 0 20px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.newsletter-form button:hover {
+    background-color: #c1121f;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .contact-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        width: 70%;
+        height: calc(100vh - 80px);
+        background-color: var(--white);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 40px 0;
+        transition: var(--transition);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .nav-links li {
+        opacity: 0;
+        transform: translateX(20px);
+        transition: var(--transition);
+    }
+    
+    .nav-links.active li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    .nav-links li:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+    
+    .nav-links li:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+    
+    .nav-links li:nth-child(3) {
+        transition-delay: 0.3s;
+    }
+    
+    .nav-links li:nth-child(4) {
+        transition-delay: 0.4s;
+    }
+    
+    .nav-links li:nth-child(5) {
+        transition-delay: 0.5s;
+    }
+    
+    .burger {
+        display: block;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .recipe-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+
+
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .features {
+        grid-template-columns: 1fr;
+    }
+    
+    .menu-tabs {
+        justify-content: flex-start;
+    }
+}
+
+/* Burger Animation */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+</style>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>Gourmet Delights</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" data-page="home" class="active">Home</a></li>
+                <li><a href="#" data-page="recipes">Recipes</a></li>
+                <li><a href="#" data-page="menu">Menu</a></li>
+                <li><a href="#" data-page="contact">Contact</a></li>
+                <li><a href="#" class="btn-reservation">Reservations</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="page active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Savor the Art of Fine Dining</h1>
+                    <p>Experience culinary excellence with our handcrafted dishes made from locally-sourced ingredients</p>
+                    <div class="hero-buttons">
+                        <button class="cta-button">Explore Menu</button>
+                        <button class="cta-button secondary">Book a Table</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947" alt="Gourmet dish">
+                </div>
+            </div>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Fresh Ingredients</h3>
+                    <p>Locally sourced, organic produce for the freshest flavors</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-award"></i>
+                    <h3>Award Winning</h3>
+                    <p>Recognized for culinary excellence since 2010</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Passionate Chefs</h3>
+                    <p>Dedicated team with over 20 years of experience</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="recipes" class="page">
+            <div class="section-header">
+                <h2>Our Signature Recipes</h2>
+                <p>Discover the secrets behind our most beloved dishes</p>
+            </div>
+            <div class="recipe-list">
+                <div class="recipe-item">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141" alt="Spaghetti Carbonara">
+                        <div class="recipe-time">
+                            <i class="far fa-clock"></i> 25 mins
+                        </div>
+                    </div>
+                    <div class="recipe-content">
+                        <div class="recipe-meta">
+                            <span class="difficulty">Intermediate</span>
+                            <span class="servings"><i class="fas fa-user-friends"></i> 4</span>
+                        </div>
+                        <h3>Spaghetti Carbonara</h3>
+                        <p>Classic Italian pasta with eggs, Pecorino Romano, guanciale, and black pepper.</p>
+                        <a href="#" class="recipe-button">View Recipe <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="recipe-item">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950" alt="Chicken Stir-Fry">
+                        <div class="recipe-time">
+                            <i class="far fa-clock"></i> 15 mins
+                        </div>
+                    </div>
+                    <div class="recipe-content">
+                        <div class="recipe-meta">
+                            <span class="difficulty">Easy</span>
+                            <span class="servings"><i class="fas fa-user-friends"></i> 2</span>
+                        </div>
+                        <h3>Chicken Stir-Fry</h3>
+                        <p>Quick stir-fried chicken with bell peppers, broccoli, and our special sauce.</p>
+                        <a href="#" class="recipe-button">View Recipe <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="recipe-item">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1564355808539-22fda35bed7e" alt="Chocolate Cake">
+                        <div class="recipe-time">
+                            <i class="far fa-clock"></i> 1 hr 30 mins
+                        </div>
+                    </div>
+                    <div class="recipe-content">
+                        <div class="recipe-meta">
+                            <span class="difficulty">Advanced</span>
+                            <span class="servings"><i class="fas fa-user-friends"></i> 8</span>
+                        </div>
+                        <h3>Chocolate Lava Cake</h3>
+                        <p>Decadent molten chocolate cake with a gooey center, served with vanilla ice cream.</p>
+                        <a href="#" class="recipe-button">View Recipe <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="page">
+            <div class="section-header">
+                <h2>Seasonal Menu</h2>
+                <p>Curated selection of our finest dishes</p>
+            </div>
+            <div class="menu-tabs">
+                <button class="menu-tab active" data-category="appetizers">Appetizers</button>
+                <button class="menu-tab" data-category="mains">Main Courses</button>
+                <button class="menu-tab" data-category="desserts">Desserts</button>
+                <button class="menu-tab" data-category="drinks">Drinks</button>
+            </div>
+            <div class="menu-categories">
+                <div class="menu-category active" id="appetizers">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Bruschetta Trio</h3>
+                            <span class="price">$12</span>
+                        </div>
+                        <p>Toasted bread topped with tomato & basil, mushroom & thyme, and roasted pepper</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Truffle Arancini</h3>
+                            <span class="price">$14</span>
+                        </div>
+                        <p>Crispy risotto balls with black truffle and mozzarella center</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Seared Scallops</h3>
+                            <span class="price">$18</span>
+                        </div>
+                        <p>With cauliflower purée and brown butter sauce</p>
+                    </div>
+                </div>
+                <div class="menu-category" id="mains">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Filet Mignon</h3>
+                            <span class="price">$38</span>
+                        </div>
+                        <p>8oz grass-fed beef, truffle mashed potatoes, seasonal vegetables</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Pan-Seared Salmon</h3>
+                            <span class="price">$32</span>
+                        </div>
+                        <p>With lemon beurre blanc, asparagus, and wild rice pilaf</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Mushroom Risotto</h3>
+                            <span class="price">$26</span>
+                        </div>
+                        <p>Creamy arborio rice with wild mushrooms and parmesan</p>
+                    </div>
+                </div>
+                <div class="menu-category" id="desserts">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Chocolate Soufflé</h3>
+                            <span class="price">$12</span>
+                        </div>
+                        <p>Warm chocolate soufflé with vanilla bean ice cream</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Crème Brûlée</h3>
+                            <span class="price">$10</span>
+                        </div>
+                        <p>Classic vanilla custard with caramelized sugar crust</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Seasonal Fruit Tart</h3>
+                            <span class="price">$11</span>
+                        </div>
+                        <p>With pastry cream and fresh seasonal fruits</p>
+                    </div>
+                </div>
+                <div class="menu-category" id="drinks">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Signature Cocktails</h3>
+                            <span class="price">$14</span>
+                        </div>
+                        <p>Ask your server about our seasonal craft cocktails</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Wine Selection</h3>
+                            <span class="price">$12-$25</span>
+                        </div>
+                        <p>Curated international and local wines by the glass</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Artisan Coffee</h3>
+                            <span class="price">$6</span>
+                        </div>
+                        <p>Locally roasted single-origin coffee</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="page">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Visit Us</h2>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 Gourmet Street<br>Foodie City, FC 10001</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <p>+91-6003811615</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>himangshukumardas75695@gmail.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Monday - Friday: 11am - 10pm<br>
+                        Saturday - Sunday: 10am - 11pm</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h2>Get in Touch</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215373510536!2d-73.9878449242399!3d40.75798597138992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1689874722356!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Gourmet Delights</h3>
+                <p>Bringing culinary excellence to your table since 2010. Our passion for food is reflected in every dish we serve.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#" data-page="home">Home</a></li>
+                    <li><a href="#" data-page="recipes">Recipes</a></li>
+                    <li><a href="#" data-page="menu">Menu</a></li>
+                    <li><a href="#" data-page="contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Subscribe to receive updates and special offers</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Gourmet Delights. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    // DOM Elements
+    const navLinks = document.querySelector('.nav-links');
+    const burger = document.querySelector('.burger');
+    const navItems = document.querySelectorAll('.nav-links a');
+    const pages = document.querySelectorAll('.page');
+    const menuTabs = document.querySelectorAll('.menu-tab');
+    const menuCategories = document.querySelectorAll('.menu-category');
+
+    // Function to open a specific page
+    function openPage(pageId) {
+        // Update active class on navigation links
+        navItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.dataset.page === pageId) {
+                item.classList.add('active');
+            }
+        });
+
+        // Update active class on pages
+        pages.forEach(page => {
+            page.classList.remove('active');
+        });
+
+        const selectedPage = document.getElementById(pageId);
+        if (selectedPage) {
+            selectedPage.classList.add('active');
+
+            // Smooth scroll to top of the page
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    // Event listener for navigation links
+    navItems.forEach(item => {
+        item.addEventListener('click', function(event) {
+            event.preventDefault();
+            const pageId = this.dataset.page;
+            openPage(pageId);
+
+            // Close the mobile navigation if it's open
+            if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                burger.classList.remove('toggle');
+            }
+        });
+    });
+
+    // Initially open the home page
+    openPage('home');
+
+    // Responsive navigation toggle
+    burger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        burger.classList.toggle('toggle');
+    });
+
+    // Menu tab functionality
+    menuTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const category = this.dataset.category;
+
+            // Update active tab
+            menuTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+
+            // Show selected category
+            menuCategories.forEach(cat => {
+                cat.classList.remove('active');
+                if (cat.id === category) {
+                    cat.classList.add('active');
+                }
+            });
+        });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 50, // Adjust offset as needed for fixed headers
+                    behavior: 'smooth'
+                });
+
+                // Close the mobile navigation if it's open after clicking an in-page link
+                if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    burger.classList.remove('toggle');
+                }
+
+                // Update active class on navigation links if the target is a main page
+                if (targetElement.classList.contains('page')) {
+                    openPage(targetId.substring(1)); // Remove the '#'
+                }
+            }
+        });
+    });
+});
+    </script>
+</body>
+</html>
