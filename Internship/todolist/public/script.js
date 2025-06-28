@@ -8,8 +8,7 @@ const clear=document.getElementById("Clear");
 clear.addEventListener("click",async()=>{
     const res=await axios.delete("http://localhost:4000/clear-complete");
     renderTodos(res.data.Todo);
-});
-
+})
 container.addEventListener("click",async(e)=>{
     if(e.target.id=="delete"){
         const id=e.target.parentElement.id;
@@ -23,6 +22,14 @@ container.addEventListener("click",async(e)=>{
     }
 })
 
+async function filterTodos(filter){
+    let res=await axios.get("http://localhost:4000/all-todos",{
+        params:{
+            filter:filter
+        }
+    })
+    renderTodos(res.data.Todos);
+}
 
 
 

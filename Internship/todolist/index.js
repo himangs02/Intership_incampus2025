@@ -36,6 +36,11 @@ app.put("/todo/:id", (req, res) => {
     });
     res.status(200).json({ Todo });
 });
+app.get("/todo/:id",(req,res)=>{
+    const id=req.params.id;
+    const todo=Todo.find((todo)=>todo.id===id);
+    res.status(200).json({todo});
+})
 
 
 app.get("/all-todos", (req, res) => {
