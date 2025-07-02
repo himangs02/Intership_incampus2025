@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <!-- Load Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+</head>
+<style>
+  body{
+      background-color: #02111B;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%233F4045' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23FCFCFC'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+      height: 100vh;
+
+
+  }
+  nav{
+    background: #02111B;
+    background: linear-gradient(90deg,rgba(2, 17, 27, 1) , rgb(37, 38, 44) 100%);
+  }
+
+</style>#03F
+
+<body class="bg-[#02111B] flex flex-col gap-1 ">
+  <div id="Home">
+
+<!-- here it is the navbar  -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[#02111B] to-[#25262c] opacity-80 px-[10vw] py-4 flex items-center justify-between">
+  
+    <!-- Logo -->
+    <div class="flex items-center gap-2">
+      <img class="h-10" src="H-removebg-preview.png" alt="">
+      <span class="text-xl text-white font-poppins">Himangshu</span>
+    </div>
+  
+    <!-- Hidden checkbox toggle -->
+    <input type="checkbox" id="menu-toggle" class="peer hidden" />
+  
+    <!-- Hamburger icon -->
+    <label for="menu-toggle" class="md:hidden flex flex-col gap-1 cursor-pointer z-50">
+      <span class="w-8 h-1 bg-white rounded"></span>
+      <span class="w-8 h-1 bg-white rounded"></span>
+      <span class="w-8 h-1 bg-white rounded"></span>
+    </label>
+  
+    <!-- Navigation Links -->
+    <ul class="peer-checked:flex hidden md:flex  flex-col md:flex-row gap-10 absolute md:static top-full left-0 w-full md:w-auto bg-[#02111B] md:bg-transparent p-4 md:p-0 z-40 ">
+      <li><a href="#Home" class="text-xl text-white font-poppins hover:text-[#5D737E]  relative inline-block text-gray-800 after:block after:h-[4px] after:bg-blue-500 after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100">Home</a></li>
+      <li><a href="#" class="text-xl text-white font-poppins hover:text-[#5D737E] relative inline-block text-gray-800 after:block after:h-[4px] after:bg-blue-500 after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100">About</a></li>
+      <li><a href="#" class="text-xl text-white font-poppins hover:text-[#5D737E] relative inline-block text-gray-800 after:block after:h-[4px] after:bg-blue-500 after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100">Skills</a></li>
+      <li><a href="#" class="text-xl text-white font-poppins hover:text-[#5D737E] relative inline-block text-gray-800 after:block after:h-[4px] after:bg-blue-500 after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100">Education</a></li>
+      <li><a href="#" class="text-xl text-white font-poppins hover:text-[#5D737E] relative inline-block text-gray-800 after:block after:h-[4px] after:bg-blue-500 after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100">Work</a></li>
+      <li><a href="#" class="text-xl text-white font-poppins hover:text-[#5D737E] relative inline-block text-gray-800 after:block after:h-[4px] after:bg-blue-500 after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100">Contacts</a></li>
+    </ul>
+  
+  </nav>
+
+<!-- here it has the introduction -->
+  
+  <div id="container" class="flex justify-start relative top-[30vh] mx-10 flex-col gap-3">
+    <h1 class="text-5xl text-[#FCFCFC] font-popins font-bold ">I,m <span class="auto-type">a Programmer</span></h1>
+    <p class="text-white md:w-1/3 font-popins sm:w-full">I’m a passionate Frontend Developer with a strong foundation in building visually appealing and responsive web interfaces. My skill set includes HTML, CSS, Tailwind CSS, and JavaScript, which I use to craft clean and intuitive user experiences. I specialize in creating responsive, mobile-friendly layouts and interactive elements that bring websites to life.
+  
+  Beyond the frontend, I also have experience with Node.js and MongoDB, enabling me to work on full-stack projects and build powerful backend functionality when needed. This blend of frontend creativity and backend logic allows me to contribute to both the look and performance of web applications.
+  
+  I'm always eager to learn new technologies, solve real-world problems, and build user-focused web experiences that not only look good but also perform exceptionally.</p>
+  
+  </div>
+  <button>Contact Me</button>
+  </div>
+
+
+
+
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+  var typed=new Typed(".auto-type",{
+    strings:["Himangshu","a FullStack Web-Developer","a Web-Designer","a Graphic-Designer","a Front-End Developer","a Back-End Developer"],
+    typeSpeed:150,
+    backSpeed:150,
+    loop:true
+  })
+</script>
+  <script src="script.js"></script>
+
+</body>
+</html>
