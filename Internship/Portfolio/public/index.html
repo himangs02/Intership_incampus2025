@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
 </head>
 <style>
-  html{
+ html{
     scroll-behavior: smooth;
   }
   ::-webkit-scrollbar{
@@ -33,64 +33,149 @@
     background-color: #2a70b7;
   }
 
-
+  @media (max-width: 768px) {
+    #Home {
+      padding-top: 20vh;
+      height: 100vh;
+    }
+    #Home h1 {
+      position: static !important;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    #Home .text-white {
+      position: static !important;
+      width: 90% !important;
+      margin: 0 auto;
+      text-align: center;
+    }
+    #Home svg {
+      display: none;
+    }
+    #Home button {
+      margin: 0.5rem auto;
+      display: block;
+    }
+    #About {
+      height: auto;
+      padding-bottom: 5rem;
+    }
+    #About .absolute {
+      position: static !important;
+      width: 90% !important;
+      margin: 1rem auto;
+      text-align: center;
+    }
+    #About .grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      width: 90% !important;
+      margin: 0 auto;
+    }
+    #About .grid svg, #About .grid img {
+      width: 80px;
+      height: 80px;
+    }
+    #container {
+      width: 90% !important;
+      margin: 0 auto;
+      text-align: center;
+    }
+    #TechStack {
+      height: auto;
+      padding-bottom: 5rem;
+    }
+    #cont {
+      grid-template-columns: repeat(2, 1fr) !important;
+      width: 90% !important;
+      margin: 0 auto;
+      height: auto;
+    }
+    #cont svg, #cont img {
+      width: 100%;
+      height: auto;
+    }
+    #Work {
+      height: auto;
+      padding-bottom: 5rem;
+    }
+    #Work .grid {
+      grid-template-columns: 1fr !important;
+      width: 90% !important;
+      margin: 0 auto;
+    }
+    #Work .row-span-2 {
+      display: none;
+    }
+    #Work video {
+      display: none;
+    }
+    #Contact {
+      height: auto;
+      padding-bottom: 5rem;
+    }
+    #Contact .border {
+      width: 90% !important;
+      height: auto;
+      padding: 2rem 0;
+    }}
 </style>
 
 <body>
-  <div id="main" class="bg-[#0D1117] flex flex-col gap-[20vh] justify-center items-center h-max w-screen leading-tight ">
+    <div id="main" class="bg-[#0D1117] flex flex-col gap-[20vh] justify-center items-center h-max w-screen leading-tight  ">
+        
 
-<!-- Home -->
-<div id="Home" class="flex flex-col items-center opacity-80">
+    <!-- Home -->
+    <div id="Home" class="flex flex-col items-center opacity-80">
 
-  <!-- Name and Role -->
-  <div class="absolute left-[10vw] sm:left-[10vw] md:left-[15vw] lg:left-[20vw] top-[5vh]">
-    <h1 class="text-[#3B82F6] font-serif text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px]">
-      Himangshu
-    </h1>
-    <h1 class="text-[#FCFCFC] text-[32px] sm:text-[40px] md:text-[46px] lg:text-[50px] w-[90vw] sm:w-[80vw] md:w-[70vw] lg:w-2/3 leading-[1]">
-      FullStack Developer
-    </h1>
-  </div>
+    <!-- Name and Role -->
+    <div class="absolute left-[10vw] sm:left-[10vw] md:left-[15vw] lg:left-[20vw] top-[5vh]">
+        <h1 class="text-[#3B82F6] font-serif text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px]">
+        Himangshu
+        </h1>
+        <h1 class="text-[#FCFCFC] text-[32px] sm:text-[40px] md:text-[46px] lg:text-[50px] w-[90vw] sm:w-[80vw] md:w-[70vw] lg:w-2/3 leading-[1]">
+        FullStack Developer
+        </h1>
+    </div>
 
-  <!-- Tagline -->
-  <div class="absolute text-white w-[80vw] sm:w-[60vw] md:w-[40vw] lg:w-[18vw] absolute top-[60vh] sm:top-[60vh] left-[10vw] sm:left-[12vw] md:left-[16vw] lg:left-[18vw] flex flex-col gap-[5vh]">
-    <p>
-      I help turn ideas into fully functional, responsive web apps using the latest technologies. With expertise in both frontend and backend, I build scalable and maintainable digital products that drive real results.
-    </p>
+    <!-- Tagline -->
+    <div class="absolute text-white w-[80vw] sm:w-[60vw] md:w-[40vw] lg:w-[18vw] absolute top-[60vh] sm:top-[60vh] left-[10vw] sm:left-[12vw] md:left-[16vw] lg:left-[18vw] flex flex-col gap-[5vh]">
+        <p>
+        I help turn ideas into fully functional, responsive web apps using the latest technologies. With expertise in both frontend and backend, I build scalable and maintainable digital products that drive real results.
+        </p>
 
-    <div>
-          <a href="#About">
-      <button class="h-10 text-sm text-white py-2 px-4 shadow-[16px_16px_20px_#0000008c] rounded-xl hover:bg-red-700 border-black border-2 border-red-800">
-        Get Started
-      </button>
-    </a>
-    <a href="#">
-      <button class="h-10 text-sm border-2 border-[#3B82F6] text-white py-2 px-4 shadow-[16px_16px_20px_#0000008c] rounded-xl hover:bg-[#2a70b7]">
-        Contact me
-      </button>
-    </a>
-    <a href="#">
-      <button class="h-10 text-sm border-2 border-red-800 text-white py-2 px-4 shadow-[16px_16px_20px_#0000008c] rounded-xl hover:bg-red-700">
-        My Work
-      </button>
-    </a>
+        <div>
+            <a href="#About">
+        <button class="h-10 text-sm text-white py-2 px-4 shadow-[16px_16px_20px_#0000008c] rounded-xl hover:bg-red-700 border-black border-2 border-red-800">
+            Get Started
+        </button>
+        </a>
+        <a href="#Contact">
+        <button class="h-10 text-sm border-2 border-[#3B82F6] text-white py-2 px-4 shadow-[16px_16px_20px_#0000008c] rounded-xl hover:bg-[#2a70b7]">
+            Contact me
+        </button>
+        </a>
+        <a href="#Work">
+        <button class="h-10 text-sm border-2 border-red-800 text-white py-2 px-4 shadow-[16px_16px_20px_#0000008c] rounded-xl hover:bg-red-700">
+            My Work
+        </button>
+        </a>
+        </div>
+
+
+
+    </div>
+
+    <!-- SVG Image -->
+        <svg class="relative h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[80vh] top-[10vh] sm:left-[10vw] md:left-[25vw] lg:left-[50vh] opacity-80" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="a"></g> <g id="b"></g> <g id="c"></g> <g id="d"></g> <g id="e"></g> <g id="f"></g> <g id="g"></g> <g id="h"></g> <g id="i"></g> <g id="j"></g> <g id="k"></g> <g id="l"></g> <g id="m"></g> <g id="n"></g> <g id="o"></g> <g id="p"></g> <g id="q"></g> <g id="r"></g> <g id="s"></g> <g id="t"></g> <g id="u"></g> <g id="v"></g> <g id="w"></g> <g id="x"></g> <g id="y"></g> <g id="a`"></g> <g id="aa"></g> <g id="ab"></g> <g id="ac"></g> <g id="ad"></g> <g id="ae"></g> <g id="af"></g> <g id="ag"></g> <g id="ah"> <path d="M15.1,53.48l1.76-3.48h0l9.35-18.52-6.51,2.11-7.29,6.26c-.23,.38-.31,.82-.23,1.25l2.65,11.53c.07,.3,.16,.58,.28,.87Z" fill="#2a70b7" id="ai"></path> <path d="M16.01,6.51l2.96,.84,.34,2.28,.11,2.2-3.05,1.04-1.71-1.55c-.44-.4-.58-1.04-.35-1.59l1.06-2.52c.13-.29,.35-.54,.63-.69h0Z" fill="#d7e5eb" id="aj"></path> <path d="M16.01,6.51l2.07,6.06,2.55-2.9-4.62-3.15Z" fill="#c0d8df" id="ak"></path> <path d="M22.84,5.74l-1.11,3.76-2.41,.12-3.3-3.11c.23-.14,.49-.22,.76-.23h5.58l.5-.54Z" fill="#e2eef2" id="al"></path> <path d="M47.14,50l-9.35-18.52-5.71-2.02-5.89,2.02-9.35,18.52,15.15,3.39,15.13-3.39Z" fill="#d7e5eb" id="am"></path> <path d="M26.2,31.48l-13.52,11.88-.52-2.26c-.09-.4-.04-.82,.14-1.2l7.24-5.62,6.65-2.8Z" fill="#5e6468" id="an"></path> <path d="M12.4,39.84l13.81-8.37-1.95-1.25-3.67,1.25-7.93,7.93c-.1,.13-.19,.28-.25,.43Z" fill="#406e96" id="ao"></path> <path d="M26.27,59l1.62-3.03-3.45-5.97h-7.58l-1.76,3.48c.13,.33,.29,.65,.49,.95l2.4,3.72c.34,.52,.92,.84,1.54,.84h6.74Z" fill="#f0f4f6" id="ap"></path> <path d="M26.2,31.48l-9.35,18.52,2.64,.59,6.71-19.11Z" fill="#c0d8df" id="aq"></path> <path d="M16.86,50l-1.76,3.48c.13,.33,.29,.65,.49,.95l1.66,2.57,2.46-7h-2.84Z" fill="#e2eef2" id="ar"></path> <path d="M37.8,31.48l9.35,18.52-2.64,.59-6.71-19.11Z" fill="#c0d8df" id="as"></path> <path d="M47.14,50l1.76,3.48c-.13,.33-.29,.65-.49,.95l-1.66,2.57-2.46-7h2.84Z" fill="#e2eef2" id="at"></path> <path d="M37.73,59l-1.62-3.03,3.45-5.97h2.98v-2.58l-5.27-5.66h-10.54l-5.27,5.66v2.58h2.98l3.45,5.97-1.62,3.03h11.47Z" fill="#2a70b7" id="au"></path> <path d="M48.9,53.48l-1.76-3.48h-7.58l-3.45,5.97,1.62,3.03h6.73c.62,0,1.21-.32,1.54-.84l2.4-3.72c.19-.3,.36-.62,.49-.95Z" fill="#f0f4f6" id="av"></path> <path d="M51.69,39.9l-7.24-5.62-6.65-2.8,9.35,18.52h0l1.76,3.48c.12-.28,.21-.57,.28-.87l2.65-11.53c.09-.4,.04-.82-.14-1.2Z" fill="#2a70b7" id="aw"></path> <path d="M37.8,31.48l13.52,11.88,.52-2.26c.09-.4,.04-.82-.14-1.2l-7.24-5.62-6.65-2.8Z" fill="#5e6468" id="ax"></path> <path d="M43.42,31.48l-3-1.64-2.62,1.64,13.9,8.42c-.09-.18-.2-.34-.34-.49l-7.93-7.93Z" fill="#406e96" id="ay"></path> <path d="M24.34,19.38l-6.65,5.11,2.89,6.99h22.84l.21-.21,2.87-6.78-6.65-5.12h-15.5Z" fill="#f9fbfc" id="b`"></path> <path d="M38.58,20.21l5.56,4.28,.36-4.82-2.32-2.4-3.6,2.95Z" fill="#406e96" id="ba"></path> <path d="M20.05,24.49l5.56-4.28-3.6-2.95-2.32,2.4,.36,4.82Z" fill="#406e96" id="bb"></path> <path d="M47.99,6.51l-2.96,.84-.34,2.28-.11,2.2,3.05,1.04,1.71-1.55c.44-.4,.58-1.04,.35-1.59l-1.06-2.52c-.13-.29-.35-.54-.63-.69h0Z" fill="#d7e5eb" id="bc"></path> <path d="M47.99,6.51l-2.07,6.06-2.55-2.9,4.62-3.15Z" fill="#c0d8df" id="bd"></path> <path d="M41.16,5.74l1.11,3.76,2.41,.12,3.3-3.11c-.23-.14-.49-.22-.76-.23h-5.58l-.5-.54Z" fill="#e2eef2" id="be"></path> <path d="M22.84,5.74h0l-.49,.55-2.99,3.29-2.99,3.29h0l-.48,.52-.11,.12h0c-.43,.48-.67,1.1-.67,1.74v9.75c0,.64,.25,1.25,.71,1.71l4.77,4.77-.53-6.99h0l-.36-4.82,2.32-2.4,3.6,2.95h0l6.48,5.31,6.48-5.31h0l3.6-2.95,2.32,2.4-.36,4.82h0l-.51,6.78,4.56-4.56c.45-.45,.71-1.07,.71-1.71V15.25c0-.64-.24-1.26-.67-1.74l-.58-.64-2.94-3.24-3.53-3.89h0c-.43-.47-1.03-.74-1.67-.74h-14.98c-.63,0-1.24,.27-1.67,.74h0Z" fill="#f0f4f6" id="bf"></path> <path d="M11.19,41.32l2.65,11.53c.18,.76,.48,1.48,.9,2.13l2.4,3.72c.52,.81,1.42,1.3,2.38,1.3h24.94c.97,0,1.86-.48,2.38-1.3l2.4-3.73c.42-.66,.73-1.37,.9-2.13l2.65-11.53c.22-.95-.06-1.92-.75-2.61l-7.22-7.23,4.06-4.06c.65-.64,1-1.5,1-2.41V15.25c0-.85-.3-1.67-.85-2.31l.97-.88c.76-.69,1-1.78,.6-2.72l-1.07-2.52c-.39-.93-1.3-1.53-2.31-1.53h-5.13l-.2-.22c-.62-.68-1.5-1.07-2.41-1.07h-14.98c-.92,0-1.8,.39-2.41,1.07h0l-.2,.22h-5.13c-1.01,0-1.92,.6-2.31,1.53l-1.07,2.52c-.4,.94-.16,2.04,.6,2.72l.97,.88c-.55,.65-.85,1.46-.85,2.31v9.75c0,.91,.35,1.77,1,2.41l4.06,4.06-7.22,7.23c-.69,.69-.97,1.66-.75,2.61Zm1.95-.45c-.03-.14,.07-.25,.11-.37l10.49-6.36-8.34,16.53-2.26-9.8Zm7.62-20.28c-.03-.35,.1-.69,.34-.95l.91-.95s.07-.03,.11,0l1.84,1.53-3.05,2.35-.15-1.98Zm.75,9.89l-.42-5.52,4.45-3.42,5.05,4.2c.82,.68,2,.68,2.82,0l5.05-4.2,4.45,3.42-.42,5.52h-4.69s0,0-.01,0H21.51Zm21.58-7.91l-3.05-2.35,1.84-1.53s.08-.02,.11,0l.91,.95c.24,.25,.37,.6,.34,.95l-.15,1.98Zm-.49,23.44l-3.91-4.2c-.62-.67-1.5-1.05-2.41-1.05h-8.54c-.91,0-1.79,.38-2.41,1.05l-3.91,4.2c-.61,.66-.95,1.51-.95,2.41v.58h-1.97l8.34-16.52h10.36l8.34,16.52h-1.98v-.58c0-.9-.34-1.76-.95-2.41Zm-6.92,11.26l.39,.73h-8.13l.39-.73c.45-.85,.43-1.89-.06-2.72l-2.48-4.2c-.49-.83-1.4-1.35-2.37-1.35h-.96v-.58c0-.39,.15-.76,.41-1.05l3.91-4.2c.24-.26,.59-.41,.95-.41h8.54c.36,0,.7,.15,.95,.41l3.91,4.2c.27,.29,.41,.66,.41,1.05v.58h-.96c-.97,0-1.88,.52-2.37,1.35l-2.48,4.2c-.49,.83-.51,1.87-.06,2.72Zm-16.85,.34l-2.4-3.72c-.09-.14-.11-.3-.19-.44l1.23-2.45h5.94c.27,0,.51,.14,.65,.37l2.48,4.2c.14,.23,.14,.52,.02,.76l-.89,1.67h-6.14c-.29,0-.55-.14-.7-.38Zm26.34,0c-.15,.24-.42,.38-.7,.38h-6.14l-.89-1.67c-.13-.24-.12-.53,.02-.76l2.48-4.2c.13-.23,.38-.37,.65-.37h5.94l1.23,2.45c-.07,.14-.1,.31-.19,.45l-2.4,3.72Zm3.43-6.94l-8.34-16.53,10.49,6.36c.04,.13,.14,.24,.11,.37l-2.26,9.8Zm-3.1-15.7l-4.12-2.5h1.63l2.5,2.5Zm3.16-24.4l-.96,.88-1.61-1.78,1.78-1.68,.89,2.12c.07,.16,.03,.35-.1,.46Zm-2.95-3.3l-.97,.92-.83-.92h1.8Zm-25.63,0l-.8,.88-.96-.88h1.75Zm-4.85,2.83l.9-2.14,1.81,1.66-1.65,1.82-.96-.88c-.13-.12-.17-.3-.1-.46Zm1.29,15.88c-.26-.26-.41-.63-.41-1V15.25c0-.4,.15-.77,.41-1.07l.59-.64h0l5.98-6.59h0l.49-.54c.24-.26,.58-.41,.93-.41h14.98c.35,0,.69,.15,.93,.41l.49,.54h0l6.56,7.23c.27,.29,.41,.67,.41,1.07v9.75c0,.37-.15,.74-.41,1l-2.86,2.86,.61-8.12c.07-.92-.26-1.82-.9-2.49l-.91-.95c-.75-.78-1.99-.85-2.82-.15l-8.47,7.04c-.08,.06-.18,.06-.26,0l-8.47-7.04c-.83-.69-2.07-.62-2.82,.15l-.91,.95c-.64,.66-.97,1.57-.9,2.49l.61,8.13-2.86-2.86Zm4.48,6.47h1.63l-4.12,2.5,2.5-2.5Z"></path> </g> <g id="bg"></g> <g id="bh"></g> <g id="bi"></g> <g id="bj"></g> <g id="bk"></g> <g id="bl"></g> <g id="bm"></g> <g id="bn"></g> <g id="bo"></g> <g id="bp"></g> <g id="bq"></g> <g id="br"></g> <g id="bs"></g> <g id="bt"></g> <g id="bu"></g> <g id="bv"></g> </g></svg>
+
+
+    <!-- Buttons -->
+
     </div>
 
 
-
-  </div>
-
-  <!-- SVG Image -->
-    <svg class="relative h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[80vh] top-[10vh] sm:left-[10vw] md:left-[25vw] lg:left-[50vh] opacity-80" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="a"></g> <g id="b"></g> <g id="c"></g> <g id="d"></g> <g id="e"></g> <g id="f"></g> <g id="g"></g> <g id="h"></g> <g id="i"></g> <g id="j"></g> <g id="k"></g> <g id="l"></g> <g id="m"></g> <g id="n"></g> <g id="o"></g> <g id="p"></g> <g id="q"></g> <g id="r"></g> <g id="s"></g> <g id="t"></g> <g id="u"></g> <g id="v"></g> <g id="w"></g> <g id="x"></g> <g id="y"></g> <g id="a`"></g> <g id="aa"></g> <g id="ab"></g> <g id="ac"></g> <g id="ad"></g> <g id="ae"></g> <g id="af"></g> <g id="ag"></g> <g id="ah"> <path d="M15.1,53.48l1.76-3.48h0l9.35-18.52-6.51,2.11-7.29,6.26c-.23,.38-.31,.82-.23,1.25l2.65,11.53c.07,.3,.16,.58,.28,.87Z" fill="#2a70b7" id="ai"></path> <path d="M16.01,6.51l2.96,.84,.34,2.28,.11,2.2-3.05,1.04-1.71-1.55c-.44-.4-.58-1.04-.35-1.59l1.06-2.52c.13-.29,.35-.54,.63-.69h0Z" fill="#d7e5eb" id="aj"></path> <path d="M16.01,6.51l2.07,6.06,2.55-2.9-4.62-3.15Z" fill="#c0d8df" id="ak"></path> <path d="M22.84,5.74l-1.11,3.76-2.41,.12-3.3-3.11c.23-.14,.49-.22,.76-.23h5.58l.5-.54Z" fill="#e2eef2" id="al"></path> <path d="M47.14,50l-9.35-18.52-5.71-2.02-5.89,2.02-9.35,18.52,15.15,3.39,15.13-3.39Z" fill="#d7e5eb" id="am"></path> <path d="M26.2,31.48l-13.52,11.88-.52-2.26c-.09-.4-.04-.82,.14-1.2l7.24-5.62,6.65-2.8Z" fill="#5e6468" id="an"></path> <path d="M12.4,39.84l13.81-8.37-1.95-1.25-3.67,1.25-7.93,7.93c-.1,.13-.19,.28-.25,.43Z" fill="#406e96" id="ao"></path> <path d="M26.27,59l1.62-3.03-3.45-5.97h-7.58l-1.76,3.48c.13,.33,.29,.65,.49,.95l2.4,3.72c.34,.52,.92,.84,1.54,.84h6.74Z" fill="#f0f4f6" id="ap"></path> <path d="M26.2,31.48l-9.35,18.52,2.64,.59,6.71-19.11Z" fill="#c0d8df" id="aq"></path> <path d="M16.86,50l-1.76,3.48c.13,.33,.29,.65,.49,.95l1.66,2.57,2.46-7h-2.84Z" fill="#e2eef2" id="ar"></path> <path d="M37.8,31.48l9.35,18.52-2.64,.59-6.71-19.11Z" fill="#c0d8df" id="as"></path> <path d="M47.14,50l1.76,3.48c-.13,.33-.29,.65-.49,.95l-1.66,2.57-2.46-7h2.84Z" fill="#e2eef2" id="at"></path> <path d="M37.73,59l-1.62-3.03,3.45-5.97h2.98v-2.58l-5.27-5.66h-10.54l-5.27,5.66v2.58h2.98l3.45,5.97-1.62,3.03h11.47Z" fill="#2a70b7" id="au"></path> <path d="M48.9,53.48l-1.76-3.48h-7.58l-3.45,5.97,1.62,3.03h6.73c.62,0,1.21-.32,1.54-.84l2.4-3.72c.19-.3,.36-.62,.49-.95Z" fill="#f0f4f6" id="av"></path> <path d="M51.69,39.9l-7.24-5.62-6.65-2.8,9.35,18.52h0l1.76,3.48c.12-.28,.21-.57,.28-.87l2.65-11.53c.09-.4,.04-.82-.14-1.2Z" fill="#2a70b7" id="aw"></path> <path d="M37.8,31.48l13.52,11.88,.52-2.26c.09-.4,.04-.82-.14-1.2l-7.24-5.62-6.65-2.8Z" fill="#5e6468" id="ax"></path> <path d="M43.42,31.48l-3-1.64-2.62,1.64,13.9,8.42c-.09-.18-.2-.34-.34-.49l-7.93-7.93Z" fill="#406e96" id="ay"></path> <path d="M24.34,19.38l-6.65,5.11,2.89,6.99h22.84l.21-.21,2.87-6.78-6.65-5.12h-15.5Z" fill="#f9fbfc" id="b`"></path> <path d="M38.58,20.21l5.56,4.28,.36-4.82-2.32-2.4-3.6,2.95Z" fill="#406e96" id="ba"></path> <path d="M20.05,24.49l5.56-4.28-3.6-2.95-2.32,2.4,.36,4.82Z" fill="#406e96" id="bb"></path> <path d="M47.99,6.51l-2.96,.84-.34,2.28-.11,2.2,3.05,1.04,1.71-1.55c.44-.4,.58-1.04,.35-1.59l-1.06-2.52c-.13-.29-.35-.54-.63-.69h0Z" fill="#d7e5eb" id="bc"></path> <path d="M47.99,6.51l-2.07,6.06-2.55-2.9,4.62-3.15Z" fill="#c0d8df" id="bd"></path> <path d="M41.16,5.74l1.11,3.76,2.41,.12,3.3-3.11c-.23-.14-.49-.22-.76-.23h-5.58l-.5-.54Z" fill="#e2eef2" id="be"></path> <path d="M22.84,5.74h0l-.49,.55-2.99,3.29-2.99,3.29h0l-.48,.52-.11,.12h0c-.43,.48-.67,1.1-.67,1.74v9.75c0,.64,.25,1.25,.71,1.71l4.77,4.77-.53-6.99h0l-.36-4.82,2.32-2.4,3.6,2.95h0l6.48,5.31,6.48-5.31h0l3.6-2.95,2.32,2.4-.36,4.82h0l-.51,6.78,4.56-4.56c.45-.45,.71-1.07,.71-1.71V15.25c0-.64-.24-1.26-.67-1.74l-.58-.64-2.94-3.24-3.53-3.89h0c-.43-.47-1.03-.74-1.67-.74h-14.98c-.63,0-1.24,.27-1.67,.74h0Z" fill="#f0f4f6" id="bf"></path> <path d="M11.19,41.32l2.65,11.53c.18,.76,.48,1.48,.9,2.13l2.4,3.72c.52,.81,1.42,1.3,2.38,1.3h24.94c.97,0,1.86-.48,2.38-1.3l2.4-3.73c.42-.66,.73-1.37,.9-2.13l2.65-11.53c.22-.95-.06-1.92-.75-2.61l-7.22-7.23,4.06-4.06c.65-.64,1-1.5,1-2.41V15.25c0-.85-.3-1.67-.85-2.31l.97-.88c.76-.69,1-1.78,.6-2.72l-1.07-2.52c-.39-.93-1.3-1.53-2.31-1.53h-5.13l-.2-.22c-.62-.68-1.5-1.07-2.41-1.07h-14.98c-.92,0-1.8,.39-2.41,1.07h0l-.2,.22h-5.13c-1.01,0-1.92,.6-2.31,1.53l-1.07,2.52c-.4,.94-.16,2.04,.6,2.72l.97,.88c-.55,.65-.85,1.46-.85,2.31v9.75c0,.91,.35,1.77,1,2.41l4.06,4.06-7.22,7.23c-.69,.69-.97,1.66-.75,2.61Zm1.95-.45c-.03-.14,.07-.25,.11-.37l10.49-6.36-8.34,16.53-2.26-9.8Zm7.62-20.28c-.03-.35,.1-.69,.34-.95l.91-.95s.07-.03,.11,0l1.84,1.53-3.05,2.35-.15-1.98Zm.75,9.89l-.42-5.52,4.45-3.42,5.05,4.2c.82,.68,2,.68,2.82,0l5.05-4.2,4.45,3.42-.42,5.52h-4.69s0,0-.01,0H21.51Zm21.58-7.91l-3.05-2.35,1.84-1.53s.08-.02,.11,0l.91,.95c.24,.25,.37,.6,.34,.95l-.15,1.98Zm-.49,23.44l-3.91-4.2c-.62-.67-1.5-1.05-2.41-1.05h-8.54c-.91,0-1.79,.38-2.41,1.05l-3.91,4.2c-.61,.66-.95,1.51-.95,2.41v.58h-1.97l8.34-16.52h10.36l8.34,16.52h-1.98v-.58c0-.9-.34-1.76-.95-2.41Zm-6.92,11.26l.39,.73h-8.13l.39-.73c.45-.85,.43-1.89-.06-2.72l-2.48-4.2c-.49-.83-1.4-1.35-2.37-1.35h-.96v-.58c0-.39,.15-.76,.41-1.05l3.91-4.2c.24-.26,.59-.41,.95-.41h8.54c.36,0,.7,.15,.95,.41l3.91,4.2c.27,.29,.41,.66,.41,1.05v.58h-.96c-.97,0-1.88,.52-2.37,1.35l-2.48,4.2c-.49,.83-.51,1.87-.06,2.72Zm-16.85,.34l-2.4-3.72c-.09-.14-.11-.3-.19-.44l1.23-2.45h5.94c.27,0,.51,.14,.65,.37l2.48,4.2c.14,.23,.14,.52,.02,.76l-.89,1.67h-6.14c-.29,0-.55-.14-.7-.38Zm26.34,0c-.15,.24-.42,.38-.7,.38h-6.14l-.89-1.67c-.13-.24-.12-.53,.02-.76l2.48-4.2c.13-.23,.38-.37,.65-.37h5.94l1.23,2.45c-.07,.14-.1,.31-.19,.45l-2.4,3.72Zm3.43-6.94l-8.34-16.53,10.49,6.36c.04,.13,.14,.24,.11,.37l-2.26,9.8Zm-3.1-15.7l-4.12-2.5h1.63l2.5,2.5Zm3.16-24.4l-.96,.88-1.61-1.78,1.78-1.68,.89,2.12c.07,.16,.03,.35-.1,.46Zm-2.95-3.3l-.97,.92-.83-.92h1.8Zm-25.63,0l-.8,.88-.96-.88h1.75Zm-4.85,2.83l.9-2.14,1.81,1.66-1.65,1.82-.96-.88c-.13-.12-.17-.3-.1-.46Zm1.29,15.88c-.26-.26-.41-.63-.41-1V15.25c0-.4,.15-.77,.41-1.07l.59-.64h0l5.98-6.59h0l.49-.54c.24-.26,.58-.41,.93-.41h14.98c.35,0,.69,.15,.93,.41l.49,.54h0l6.56,7.23c.27,.29,.41,.67,.41,1.07v9.75c0,.37-.15,.74-.41,1l-2.86,2.86,.61-8.12c.07-.92-.26-1.82-.9-2.49l-.91-.95c-.75-.78-1.99-.85-2.82-.15l-8.47,7.04c-.08,.06-.18,.06-.26,0l-8.47-7.04c-.83-.69-2.07-.62-2.82,.15l-.91,.95c-.64,.66-.97,1.57-.9,2.49l.61,8.13-2.86-2.86Zm4.48,6.47h1.63l-4.12,2.5,2.5-2.5Z"></path> </g> <g id="bg"></g> <g id="bh"></g> <g id="bi"></g> <g id="bj"></g> <g id="bk"></g> <g id="bl"></g> <g id="bm"></g> <g id="bn"></g> <g id="bo"></g> <g id="bp"></g> <g id="bq"></g> <g id="br"></g> <g id="bs"></g> <g id="bt"></g> <g id="bu"></g> <g id="bv"></g> </g></svg>
-
-
-  <!-- Buttons -->
-
-</div>
-
-
     <!-- --------------------------------------------------------------- -->
-    <div id="About">
+    <div id="About" class="snap-start">
       
   
   <!-- here it is the navbar  -->
@@ -118,9 +203,9 @@
       <ul class="peer-checked:flex hidden md:flex  flex-col md:flex-row gap-7 absolute md:static top-full left-0 w-full md:w-auto bg-[#02111B] md:bg-transparent p-4 md:p-0 z-40 ">
         <li><a href="#Home" class="text-xl text-white font-poppins hover:text-[#5D737E]  relative inline-block text-gray-800 after:block after:h-[4px] after:bg-blue-500 after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100">Home</a></li>
         <li><a href="#About" class="text-xl text-white font-poppins hover:text-[#5D737E] relative inline-block text-gray-800 after:block after:h-[4px] after:bg-blue-500 after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100">About</a></li>
-        <li><a href="#TechStack" class="text-xl text-white font-poppins hover:text-[#5D737E] relative inline-block text-gray-800 after:block after:h-[4px] after:bg-blue-500 after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100">Tech-Stack</a></li>
-        <li><a href="#" class="text-xl text-white font-poppins hover:text-[#5D737E] relative inline-block text-gray-800 after:block after:h-[4px] after:bg-blue-500 after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100">Work</a></li>
-        <li><a href="#" class="text-xl text-white font-poppins hover:text-[#5D737E] relative inline-block text-gray-800 after:block after:h-[4px] after:bg-blue-500 after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100">Contact</a></li>
+        <li><a href="#TechStack" class="text-xl text-white font-poppins hover:text-[#5D737E] relative inline-block text-gray-800 after:block after:h-[4px] after:bg-blue-500 after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100">TechStack</a></li>
+        <li><a href="#Work" class="text-xl text-white font-poppins hover:text-[#5D737E] relative inline-block text-gray-800 after:block after:h-[4px] after:bg-blue-500 after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100">Work</a></li>
+        <li><a href="#Contact" class="text-xl text-white font-poppins hover:text-[#5D737E] relative inline-block text-gray-800 after:block after:h-[4px] after:bg-blue-500 after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100">Contact</a></li>
       </ul>
 
       <button class="text-xl border-2 font-poppins rounded-2xl px-4">Dark</button>
@@ -175,7 +260,7 @@
     </div>
 
     <!-- -------------------------------- -->
-     <div id="TechStack" class=" h-screen w-screen">
+     <div id="TechStack" class=" h-screen w-screen leading-tight">
 
       <div class="flex justify-between">
 
@@ -190,8 +275,8 @@
           </ul>
         </nav>
       </div>
-      <div class=" grid grid-cols-8 gap-4 h-[60vh] w-[85vw] mx-14">
-        <div id="JS" class="transform transition duration-300 hover:scale-110 col-span-2 row-span-12"><svg class=" bg-[#f5de19] rounded-3xl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>file_type_js_official</title><rect x="2" y="2" width="28" height="28" style="fill:#f5de19"></rect><path d="M20.809,23.875a2.866,2.866,0,0,0,2.6,1.6c1.09,0,1.787-.545,1.787-1.3,0-.9-.716-1.222-1.916-1.747l-.658-.282c-1.9-.809-3.16-1.822-3.16-3.964,0-1.973,1.5-3.476,3.853-3.476a3.889,3.889,0,0,1,3.742,2.107L25,18.128A1.789,1.789,0,0,0,23.311,17a1.145,1.145,0,0,0-1.259,1.128c0,.789.489,1.109,1.618,1.6l.658.282c2.236.959,3.5,1.936,3.5,4.133,0,2.369-1.861,3.667-4.36,3.667a5.055,5.055,0,0,1-4.795-2.691Zm-9.295.228c.413.733.789,1.353,1.693,1.353.864,0,1.41-.338,1.41-1.653V14.856h2.631v8.982c0,2.724-1.6,3.964-3.929,3.964a4.085,4.085,0,0,1-3.947-2.4Z"></path></g></svg></div>
+      <div id="cont" class=" grid grid-cols-8 gap-4 h-[60vh] w-[85vw] mx-14">
+        <div id="JS"  class="transform transition duration-300 hover:scale-110 col-span-2 row-span-12"><svg  class=" bg-[#f5de19] rounded-3xl" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>file_type_js_official</title><rect x="2" y="2" width="28" height="28" style="fill:#f5de19"></rect><path d="M20.809,23.875a2.866,2.866,0,0,0,2.6,1.6c1.09,0,1.787-.545,1.787-1.3,0-.9-.716-1.222-1.916-1.747l-.658-.282c-1.9-.809-3.16-1.822-3.16-3.964,0-1.973,1.5-3.476,3.853-3.476a3.889,3.889,0,0,1,3.742,2.107L25,18.128A1.789,1.789,0,0,0,23.311,17a1.145,1.145,0,0,0-1.259,1.128c0,.789.489,1.109,1.618,1.6l.658.282c2.236.959,3.5,1.936,3.5,4.133,0,2.369-1.861,3.667-4.36,3.667a5.055,5.055,0,0,1-4.795-2.691Zm-9.295.228c.413.733.789,1.353,1.693,1.353.864,0,1.41-.338,1.41-1.653V14.856h2.631v8.982c0,2.724-1.6,3.964-3.929,3.964a4.085,4.085,0,0,1-3.947-2.4Z"></path></g></svg></div>
         <div id="HTML" class="transform transition duration-300 hover:scale-110 rounded-3xl h-max bg-[#F16529]"> <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 28L4 3H28L26 28L16 31L6 28Z" fill="#E44D26"></path> <path d="M26 5H16V29.5L24 27L26 5Z" fill="#F16529"></path> <path d="M9.5 17.5L8.5 8H24L23.5 11H11.5L12 14.5H23L22 24L16 26L10 24L9.5 19H12.5L13 21.5L16 22.5L19 21.5L19.5 17.5H9.5Z" fill="white"></path> </g></svg></div>
         <div id="CSS" class="transform transition duration-300 hover:scale-110 rounded-3xl h-max bg-[#33AADD]"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 28L4 3H28L26 28L16 31L6 28Z" fill="#1172B8"></path> <path d="M26 5H16V29.5L24 27L26 5Z" fill="#33AADD"></path> <path d="M19.5 17.5H9.5L9 14L17 11.5H9L8.5 8.5H24L23.5 12L17 14.5H23L22 24L16 26L10 24L9.5 19H12.5L13 21.5L16 22.5L19 21.5L19.5 17.5Z" fill="white"></path> </g></svg></div>
         <div id="React" class="transform transition duration-300 hover:scale-110 rounded-3xl h-max bg-gray-500"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>file_type_reactjs</title><circle cx="16" cy="15.974" r="2.5" style="fill:#1e1e1e"></circle><path d="M16,21.706a28.385,28.385,0,0,1-8.88-1.2,11.3,11.3,0,0,1-3.657-1.958A3.543,3.543,0,0,1,2,15.974c0-1.653,1.816-3.273,4.858-4.333A28.755,28.755,0,0,1,16,10.293a28.674,28.674,0,0,1,9.022,1.324,11.376,11.376,0,0,1,3.538,1.866A3.391,3.391,0,0,1,30,15.974c0,1.718-2.03,3.459-5.3,4.541A28.8,28.8,0,0,1,16,21.706Zm0-10.217a27.948,27.948,0,0,0-8.749,1.282c-2.8.977-4.055,2.313-4.055,3.2,0,.928,1.349,2.387,4.311,3.4A27.21,27.21,0,0,0,16,20.51a27.6,27.6,0,0,0,8.325-1.13C27.4,18.361,28.8,16.9,28.8,15.974a2.327,2.327,0,0,0-1.01-1.573,10.194,10.194,0,0,0-3.161-1.654A27.462,27.462,0,0,0,16,11.489Z" style="fill:#1e1e1e"></path><path d="M10.32,28.443a2.639,2.639,0,0,1-1.336-.328c-1.432-.826-1.928-3.208-1.327-6.373a28.755,28.755,0,0,1,3.4-8.593h0A28.676,28.676,0,0,1,16.71,5.995a11.376,11.376,0,0,1,3.384-2.133,3.391,3.391,0,0,1,2.878,0c1.489.858,1.982,3.486,1.287,6.859a28.806,28.806,0,0,1-3.316,8.133,28.385,28.385,0,0,1-5.476,7.093,11.3,11.3,0,0,1-3.523,2.189A4.926,4.926,0,0,1,10.32,28.443Zm1.773-14.7a27.948,27.948,0,0,0-3.26,8.219c-.553,2.915-.022,4.668.75,5.114.8.463,2.742.024,5.1-2.036a27.209,27.209,0,0,0,5.227-6.79,27.6,27.6,0,0,0,3.181-7.776c.654-3.175.089-5.119-.713-5.581a2.327,2.327,0,0,0-1.868.089A10.194,10.194,0,0,0,17.5,6.9a27.464,27.464,0,0,0-5.4,6.849Z" style="fill:#1e1e1e"></path><path d="M21.677,28.456c-1.355,0-3.076-.82-4.868-2.361a28.756,28.756,0,0,1-5.747-7.237h0a28.676,28.676,0,0,1-3.374-8.471,11.376,11.376,0,0,1-.158-4A3.391,3.391,0,0,1,8.964,3.9c1.487-.861,4.01.024,6.585,2.31a28.8,28.8,0,0,1,5.39,6.934,28.384,28.384,0,0,1,3.41,8.287,11.3,11.3,0,0,1,.137,4.146,3.543,3.543,0,0,1-1.494,2.555A2.59,2.59,0,0,1,21.677,28.456Zm-9.58-10.2a27.949,27.949,0,0,0,5.492,6.929c2.249,1.935,4.033,2.351,4.8,1.9.8-.465,1.39-2.363.782-5.434A27.212,27.212,0,0,0,19.9,13.74,27.6,27.6,0,0,0,14.755,7.1c-2.424-2.152-4.39-2.633-5.191-2.169a2.327,2.327,0,0,0-.855,1.662,10.194,10.194,0,0,0,.153,3.565,27.465,27.465,0,0,0,3.236,8.1Z" style="fill:#1e1e1e"></path></g></svg></div>
@@ -205,18 +290,116 @@
         <div id="tailwind" class="transform transition duration-300 hover:scale-110 col-span-2 flex justify-center item-center h-[19vh] bg-[#3552] rounded-3xl "><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="180" height="180" viewBox="0 0 48 48"><path fill="#00acc1" d="M24,9.604c-6.4,0-10.4,3.199-12,9.597c2.4-3.199,5.2-4.398,8.4-3.599 c1.826,0.456,3.131,1.781,4.576,3.247C27.328,21.236,30.051,24,36,24c6.4,0,10.4-3.199,12-9.598c-2.4,3.199-5.2,4.399-8.4,3.6 c-1.825-0.456-3.13-1.781-4.575-3.247C32.672,12.367,29.948,9.604,24,9.604L24,9.604z M12,24c-6.4,0-10.4,3.199-12,9.598 c2.4-3.199,5.2-4.399,8.4-3.599c1.825,0.457,3.13,1.781,4.575,3.246c2.353,2.388,5.077,5.152,11.025,5.152 c6.4,0,10.4-3.199,12-9.598c-2.4,3.199-5.2,4.399-8.4,3.599c-1.826-0.456-3.131-1.781-4.576-3.246C20.672,26.764,17.949,24,12,24 L12,24z"></path></svg></div>
       </div>
 
-       <div id="progress" class="m-4">
-        <div class="w-[90vw] bg-white rounded-full h-5 dark:bg-gray-700">
-          <div class="w-[60vw] bg-pink-600 rounded-full text-[#1e1e1e] font-bold "><h1 class="relative left-[40vw]" id="percentage">80%</h1></div>
-          
-        </div>
-       </div>
+      <div class="w-[85vw] mx-14 mt-8 bg-gray-200 rounded-full h-4 overflow-hidden">
+      <div id="progressBar" class="bg-pink-600 h-4 w-0 transition-all duration-500">
+        <h1 id="Progress" class=" font-bold text-[#1e1e1e]  transition-all duration-500 flex justify-end">0%</h1>
+      </div>
+      </div>
+
 
 
 
      </div>
 
-  </div>
+     <div id="Work" class="h-screen snap-start">
+        <nav class="sticky top-0 left-0 w-screen z-50 bg-[#0D1117] opacity-80 px-[10vw] py-4 flex items-center justify-between text-[#F1F5F9] ] ">
+    
+      <!-- Logo -->
+      <div id="HomeTop" class="flex items-center gap-2">
+        <img class="h-10" src="H-removebg-preview.png" alt="">
+        <span class="text-xl text-white font-poppins">Himangshu</span>
+      </div>
+     
+
+    
+      <!-- Hidden checkbox toggle -->
+      <input type="checkbox" id="menu-toggle" class="peer hidden" />
+    
+      <!-- Hamburger icon -->
+      <label for="menu-toggle" class="md:hidden flex flex-col gap-1 cursor-pointer z-50">
+        <span class="w-8 h-1 bg-white rounded"></span>
+        <span class="w-8 h-1 bg-white rounded"></span>
+        <span class="w-8 h-1 bg-white rounded"></span>
+      </label>
+    
+      <!-- Navigation Links -->
+      <ul class="peer-checked:flex hidden md:flex  flex-col md:flex-row gap-7 absolute md:static top-full left-0 w-full md:w-auto bg-[#02111B] md:bg-transparent p-4 md:p-0 z-40 ">
+        <li><a href="#Home" class="text-xl text-white font-poppins hover:text-[#5D737E]  relative inline-block text-gray-800 after:block after:h-[4px] after:bg-blue-500 after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100">Home</a></li>
+        <li><a href="#About" class="text-xl text-white font-poppins hover:text-[#5D737E] relative inline-block text-gray-800 after:block after:h-[4px] after:bg-blue-500 after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100">About</a></li>
+        <li><a href="#TechStack" class="text-xl text-white font-poppins hover:text-[#5D737E] relative inline-block text-gray-800 after:block after:h-[4px] after:bg-blue-500 after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100">TechStack</a></li>
+        <li><a href="#Work" class="text-xl text-white font-poppins hover:text-[#5D737E] relative inline-block text-gray-800 after:block after:h-[4px] after:bg-blue-500 after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100">Work</a></li>
+        <li><a href="#Contact" class="text-xl text-white font-poppins hover:text-[#5D737E] relative inline-block text-gray-800 after:block after:h-[4px] after:bg-blue-500 after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100">Contact</a></li>
+      </ul>
+
+      <button class="text-xl border-2 font-poppins rounded-2xl px-4">Dark</button>
+  
+      
+    </nav>
+
+    <div>
+        <h1 class="flex text-[60px]  mx-10 relative top-[5vh] font-serif text-[#2a70b7]">Projects</h1>
+
+    </div>
+
+    <div class=" grid  grid-cols-3 gap-4 h-[70vh] w-[80vw] relative top-20 mx-auto  group ">
+      <div class="row-span-2 text-red-700 font-semibold  font-serif w-max h-max rotate-[270deg] text-5xl relative left-[23vh] m-auto">Projects -></div>
+        <div class="flex justify-center  items-center m-4 transition-all hover:scale-110 ">
+            
+            <img class="rounded-2xl" src="img/Screenshot 2025-06-26 230756.png" alt="">  
+            <video autoplay muted loop class=" absolute h-[30vh] rounded-3xl transition-all  opacity-0 hover:opacity-100  " src="video/Screen Recording 2025-06-26 222355.mp4" frameborder="0"></video>
+        </div>
+        <div class="flex justify-center  items-center m-4 transition-all hover:scale-110 ">
+            
+            <img class="rounded-2xl" src="img/Screenshot 2025-07-04 220039.png" alt="">  
+            <video autoplay muted loop class=" absolute h-[30vh] rounded-3xl transition-all  opacity-0 hover:opacity-100  " src="video/Screen Recording 2025-07-04 220202.mp4" frameborder="0"></video>
+        </div>
+  
+        <div class="flex justify-center  items-center m-4 transition-all hover:scale-110 ">
+            
+            <img class="rounded-2xl" src="img/Screenshot 2025-07-04 220433.png" alt="">  
+            <video autoplay muted loop class=" absolute h-[30vh] rounded-3xl transition-all  opacity-0 hover:opacity-100  " src="video/Screen Recording 2025-07-04 220533.mp4" frameborder="0"></video>
+        </div>
+       <div class="flex justify-center items-center m-auto">
+        <h1 class="text-red-700 text-3xl border border-red-700 rounded-2xl p-4 transition-all hover:scale-110 font-popins font-bold ">Hover To Preview</h1>
+       </div>
+        
+    </div>
+     </div>
+
+
+     <div id="Contact" class="h-screen w-screen">
+       <h1 class="flex text-[60px]  mx-10 relative top-[5vh] font-serif text-[#2a70b7]">Contact</h1>
+
+
+       <div class="border border-[#2a70b7] flex justify-center items-center m-auto relative top-20 h-[70vh] w-[30vw] rounded-3xl shadow-[16px_16px_16px_#1e1e1e]">
+        <form id="contactForm" action="/submit" method="post" class="w-[90%] max-w-md space-y-8 text-white">
+            <div class="relative">
+              <input name="name" type="text" placeholder="Name"
+                    class="w-full bg-transparent border-b-2 border-[#2a70b7] outline-none py-2 text-sm placeholder-gray-400"/>
+            </div>
+
+            <div class="relative">
+              <input name="email" type="email" placeholder="Email"
+                    class="w-full bg-transparent border-b-2 border-[#2a70b7] outline-none py-2 text-sm placeholder-gray-400"/>
+            </div>
+
+            <div class="relative">
+              <textarea name="message" placeholder="Message" rows="5"
+                        class="w-full bg-transparent border-b-2 border-[#2a70b7] outline-none py-2 text-sm placeholder-gray-400 resize-none"></textarea>
+            </div>
+
+            <button type="submit"
+                    class="bg-[#2a70b7] px-4 py-2 rounded text-white text-sm hover:bg-red-700 transition duration-300">
+              Send Message
+            </button>
+
+          </form>
+            
+          </div>
+          
+        </div>
+
+    </div>
   
   
   

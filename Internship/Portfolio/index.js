@@ -1,17 +1,46 @@
-const express = require('express');
+const express = require("express");
+const mongoose = require("mongoose");
+const { mongo } = require("mongoose");
 const app=express();
-const path = require('path');
-const port = 3000;
+require("dotenv").config();
+const path=require("path");
+const port=3000;
 
+app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
 
-const publicPath = path.resolve(__dirname,'./public');
-app.use(express.static(publicPath));
+app.use(express.static(path.join(__dirname,"public")));
+// app.get("/",(req,res)=>{
+//     res.sendFile(path.join(__dirname,"public","index.html"));
+// })
+mongoose.connect(process.env.DATABASE_URL).then(()=>{
+    console.log("connected to database");
+}).catch((error)=>{
+    console.log(error);
+})
+const formSchema=new mongoose.Schema({
+    name:String,
+    email:String,
+    message:String
+})
+const Form=mongoose.model("Form",formSchema);
+app.post("/submit",async(req,res)=>{
+    try {
+        console.log("BODY RECEIVED:", req.body);
+        let newForm=await Form.create({
+            name:req.body.name,
+            email:req.body.email,
+            message:req.body.message
 
+        })
+        
 
-app.get("/",(req,res)=>{
-    res.sendFile(path.resolve(__dirname,'./views/index.html'));
+        res.status(200).json({newForm});
+    } catch (error) {
+        res.status(400).json({error:error.message});
+        console.log(error);
+    }
 })
 app.listen(port,()=>{
-    console.log(`server is starting on port ${port}`);
-
+    console.log(`Server is running on port ${port}`);
 })
