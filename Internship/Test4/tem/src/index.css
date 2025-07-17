@@ -1,0 +1,4 @@
+@import "tailwindcss";
+
+/* Add animation delays if needed (Tailwind doesn't have built-in delay utilities for custom animations directly) */
+/* You'll add these manually to apply specific delays if you don't want to pass them as props */
